@@ -1,11 +1,15 @@
+import React from "react";
 import "./styles.css";
+import DisplayCategories from "../DisplayCategories";
+import AddItem from "../AddItem";
 
-function App() {
+const App = () => {
   return (
     <>
-      <h1>im app</h1>
+      <AddItem />
+      <DisplayCategories />
     </>
   );
-}
+};
 
 export default App;
