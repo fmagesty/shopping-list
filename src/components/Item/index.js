@@ -5,7 +5,7 @@ import "./styles.css";
 const Item = () => {
   return (
     <div id="item">
-      <span className="item-name">Item 1</span>
+      <span className="item-name">Arroz</span>
       <Counter />
     </div>
   );

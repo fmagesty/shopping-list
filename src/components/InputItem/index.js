@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "./styles.css";
 
-const AddItem = () => {
+const InputItem = () => {
   const [item, setItem] = useState("");
+  const [list, setList] = useState({});
+  console.log(list);
 
   const handleChange = (e) => {
     setItem(e.target.value);
@@ -11,18 +13,18 @@ const AddItem = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(item);
+    setList(item);
     // Resets the input field after addind it
-    document.getElementById("add-item").value = null;
+    document.getElementById("input-item").value = null;
   };
-
   return (
     <form onSubmit={handleSubmit} id="item-form">
       <label>
-        Add item:
+        I'm Input Item:
         <input
           type="text"
-          name="add-item"
-          id="add-item"
+          name="input-item"
+          id="input-item"
           placeholder="item name"
           onChange={handleChange}
         />
@@ -32,4 +34,4 @@ const AddItem = () => {
   );
 };
 
-export default AddItem;
+export default InputItem;

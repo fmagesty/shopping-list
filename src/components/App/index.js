@@ -1,13 +1,15 @@
 import React from "react";
 import "./styles.css";
 import DisplayCategories from "../DisplayCategories";
-import AddItem from "../AddItem";
+import InputItem from "../InputItem";
+import TestItem from "../../features/changeItem/TestItem";
 
 const App = () => {
   return (
     <>
-      <AddItem />
+      <InputItem />
       <DisplayCategories />
+      <TestItem />
     </>
   );
 };
