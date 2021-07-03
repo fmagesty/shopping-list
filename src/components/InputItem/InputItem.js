@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import "./styles.css";
+import { useDispatch } from "react-redux";
+import { allItems } from "./inputItemSlice";
 
 const InputItem = () => {
   const [item, setItem] = useState("");
-  const [list, setList] = useState({});
-  console.log(list);
+  const dispatch = useDispatch();
 
   const handleChange = (e) => {
     setItem(e.target.value);
@@ -12,9 +13,8 @@ const InputItem = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(item);
-    setList(item);
-    // Resets the input field after addind it
+    dispatch(allItems(item));
+    // Resets the input field after adding it
     document.getElementById("input-item").value = null;
   };
   return (
