@@ -7,7 +7,6 @@ export const inputItemSlice = createSlice({
   },
   reducers: {
     allItems: (state, action) => {
-      // state.value += action.payload;
       state.value.push(action.payload);
     },
   },

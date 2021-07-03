@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import DisplayItems from "../DisplayItems";
+import DisplayItems from "../DisplayItems/DisplayItems";
 
 const DisplayCategories = () => {
   return (

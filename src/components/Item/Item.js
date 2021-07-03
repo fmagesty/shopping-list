@@ -5,16 +5,14 @@ import { useSelector } from "react-redux";
 
 const Item = () => {
   const data = useSelector((state) => state.inputItem.value);
-  const mapData = data.map((item) => item);
-  console.log(mapData);
   return (
-    <div id="item">
+    <div>
       {data &&
         data.map((item) => (
-          <p key={item}>
-            {item}
+          <div key={item} id="item-div">
+            <span id="item">{item}</span>
             <Counter />
-          </p>
+          </div>
         ))}
     </div>
   );
