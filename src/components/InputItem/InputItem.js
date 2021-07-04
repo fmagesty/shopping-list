@@ -20,7 +20,7 @@ const InputItem = () => {
   return (
     <form onSubmit={handleSubmit} id="item-form">
       <label>
-        I'm Input Item:
+        Enter the item name:
         <input
           type="text"
           name="input-item"
@@ -29,7 +29,7 @@ const InputItem = () => {
           onChange={handleChange}
         />
       </label>
-      <input type="submit" value="Submit" />
+      <input type="submit" value="Add" />
     </form>
   );
 };
