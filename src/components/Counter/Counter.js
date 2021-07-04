@@ -2,10 +2,10 @@ import React, { useState } from "react";
 import "./styles.css";
 
 const Counter = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
 
   const decrement = () => {
-    if (count > 0) {
+    if (count > 1) {
       return setCount(count - 1);
     }
   };
