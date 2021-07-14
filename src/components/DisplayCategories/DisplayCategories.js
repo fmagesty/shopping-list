@@ -1,12 +1,12 @@
 import React from "react";
 import "./styles.css";
-import DisplayItems from "../DisplayItems/DisplayItems";
+import Category from "../Category/Category";
 
 const DisplayCategories = () => {
   return (
     <div id="display-categories">
       <p>I display all categories</p>
-      <DisplayItems />
+      <Category />
     </div>
   );
 };
