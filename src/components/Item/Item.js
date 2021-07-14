@@ -8,11 +8,11 @@ const Item = () => {
   const data = useSelector((state) => state.inputItem.value);
 
   return (
-    <div>
+    <div id="item-div">
       {data &&
         data.map((item) => (
-          <div key={item} id="item-div">
-            <span id="item">{item}</span>
+          <div key={item}>
+            <span id="item-name">{item}</span>
             <Counter />
             <SelectCategory />
           </div>
