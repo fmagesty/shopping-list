@@ -11,6 +11,12 @@ const Category = () => {
       <div>
         <h1>I'm category 2</h1>
       </div>
+      <div>
+        <h1>I'm category 3</h1>
+      </div>
+      <div>
+        <h1>I'm category 4</h1>
+      </div>
       <Item />
     </div>
   );

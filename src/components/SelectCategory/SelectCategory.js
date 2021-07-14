@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const SelectCategory = () => {
-  const [category, setCategory] = useState("category-1");
+  const [category, setCategory] = useState("");
 
   const handleChange = (e) => {
     setCategory(e.target.value);
