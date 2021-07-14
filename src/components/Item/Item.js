@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import Counter from "../Counter/Counter";
 import SelectCategory from "../SelectCategory/SelectCategory";
 import "./styles.css";

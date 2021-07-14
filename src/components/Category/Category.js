@@ -3,7 +3,6 @@ import "./styles.css";
 import Item from "../Item/Item";
 
 const Category = () => {
-  const category1 = [];
   return (
     <div id="category">
       <div>
