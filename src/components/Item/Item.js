@@ -5,12 +5,12 @@ import "./styles.css";
 import { useSelector } from "react-redux";
 
 const Item = () => {
-  const data = useSelector((state) => state.inputItem.value);
+  const input = useSelector((state) => state.inputItem.value);
 
   return (
     <div id="item-div">
-      {data &&
-        data.map((item) => (
+      {input &&
+        input.map((item) => (
           <div key={item}>
             <span id="item-name">{item}</span>
             <Counter />
