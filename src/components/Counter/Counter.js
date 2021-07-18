@@ -12,20 +12,13 @@ const Counter = () => {
 
   return (
     <>
-      <button
-        aria-label="Decrement value"
-        onClick={() => decrement()}
-        id="decrement"
-      >
-        -
+      <button>
+        <i class="bi bi-dash-lg" onClick={() => decrement()}></i>
       </button>
+
       <span id="counter">{count}</span>
-      <button
-        aria-label="Increment value"
-        onClick={() => setCount(count + 1)}
-        id="increment"
-      >
-        +
+      <button>
+        <i class="bi bi-plus-lg" onClick={() => setCount(count + 1)}></i>
       </button>
     </>
   );
