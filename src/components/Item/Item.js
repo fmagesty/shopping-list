@@ -7,8 +7,8 @@ import { useSelector } from "react-redux";
 const Item = () => {
   const input = useSelector((state) => state.inputItem.value);
 
-  const handleClick = (e) => {
-    e.target.classList.toggle("strikeThrough");
+  const handleClick = (item) => {
+    document.getElementById(item).classList.toggle("strikeThrough");
   };
 
   return (
@@ -16,9 +16,8 @@ const Item = () => {
       {input &&
         input.map((item) => (
           <div key={item}>
-            <span id="item-name" onClick={handleClick}>
-              {item}
-            </span>
+            <i class="bi bi-circle" onClick={() => handleClick(item)}></i>
+            <span id={item}>{item}</span>
             <Counter />
             <SelectCategory />
           </div>

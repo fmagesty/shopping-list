@@ -1,10 +1,10 @@
-#item-name {
+.item-name {
   margin: 1rem 2rem 1rem 2rem;
 }
-#item-div {
-  background: steelblue;
-}
+
 .strikeThrough {
   text-decoration: line-through;
-  color: red;
+}
+.bi-circle {
+  font-size: 1.5rem;
 }
