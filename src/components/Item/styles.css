@@ -4,3 +4,7 @@
 #item-div {
   background: steelblue;
 }
+.strikeThrough {
+  text-decoration: line-through;
+  color: red;
+}
