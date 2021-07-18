@@ -13,12 +13,12 @@ const Counter = () => {
   return (
     <>
       <button>
-        <i class="bi bi-dash-lg" onClick={() => decrement()}></i>
+        <i className="bi bi-dash-lg" onClick={() => decrement()}></i>
       </button>
 
       <span id="counter">{count}</span>
       <button>
-        <i class="bi bi-plus-lg" onClick={() => setCount(count + 1)}></i>
+        <i className="bi bi-plus-lg" onClick={() => setCount(count + 1)}></i>
       </button>
     </>
   );
