@@ -17,7 +17,14 @@ const Item = () => {
       {input &&
         input.map((item) => (
           <div key={item}>
-            <i className="bi-circle" onClick={() => handleClick(item)}></i>
+            {item.isSelected ? (
+              <i
+                className="bi bi-check-circle"
+                onClick={() => handleClick(item)}
+              ></i>
+            ) : (
+              <i className="bi-circle" onClick={() => handleClick(item)}></i>
+            )}
             <span id={item}>{item}</span>
             <Counter />
             <SelectCategory />
@@ -28,3 +35,6 @@ const Item = () => {
 };
 
 export default Item;
+
+// "bi bi-check-circle";
+// "bi-circle";
