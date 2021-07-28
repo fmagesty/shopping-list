@@ -4,20 +4,16 @@ import { useDispatch } from "react-redux";
 import { allItems } from "./inputItemSlice";
 
 const InputItem = () => {
-  const [items, setItems] = useState([]);
+  const [item, setItem] = useState([]);
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    const newItem = {
-      itemName: e.target.value,
-      isSelected: false,
-    };
-    setItems(newItem);
+    setItem(e.target.value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(allItems(items));
+    dispatch(allItems(item));
     // Resets the input field after adding it
     document.getElementById("input-item").value = null;
   };
