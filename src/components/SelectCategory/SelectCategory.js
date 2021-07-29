@@ -6,6 +6,7 @@ const SelectCategory = () => {
 
   const handleChange = (e) => {
     setCategory(e.target.value);
+    console.log(e.target.value);
   };
 
   return (

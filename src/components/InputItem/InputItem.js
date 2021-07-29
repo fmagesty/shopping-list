@@ -19,7 +19,7 @@ const InputItem = () => {
   };
   return (
     <form onSubmit={handleSubmit} id="item-form">
-      <label>
+      <label id="label">
         Enter the item name:
         <input
           type="text"
