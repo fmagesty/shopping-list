@@ -1,18 +1,29 @@
-import React from "react";
+import React, { useState } from "react";
 import "./styles.css";
 
-const CheckCircle = ({ item }) => {
+const CheckCircle = ({ product }) => {
+  const [item, setItem] = useState([{ itemName: product, isSelected: false }]);
+
+  console.log(item);
+
   const handleClick = (item) => {
-    document.getElementById(item).classList.toggle("strikeThrough");
+    document.getElementById(item.itemName).classList.toggle("strikeThrough");
+    setItem([{ itemName: product, isSelected: !item.isSelected }]);
   };
 
   return (
     <>
-      {item.isSelected ? (
-        <i className="bi bi-check-circle" onClick={() => handleClick(item)}></i>
-      ) : (
-        <i className="bi-circle" onClick={() => handleClick(item)}></i>
-      )}
+      {item &&
+        item.map((item) =>
+          item.isSelected ? (
+            <i
+              className="bi bi-check-circle"
+              onClick={() => handleClick(item)}
+            ></i>
+          ) : (
+            <i className="bi-circle" onClick={() => handleClick(item)}></i>
+          )
+        )}
     </>
   );
 };
