@@ -29,7 +29,9 @@ const InputItem = () => {
           onChange={handleChange}
         />
       </label>
-      <input type="submit" value="OK" />
+      <button>
+        <i class="bi bi-cart-plus" type="submit"></i>
+      </button>
     </form>
   );
 };
