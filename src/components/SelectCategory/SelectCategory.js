@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "./styles.css";
 
 const SelectCategory = () => {
   const [category, setCategory] = useState("");
@@ -8,7 +9,11 @@ const SelectCategory = () => {
   };
 
   return (
-    <select value={category} onChange={handleChange}>
+    <select
+      value={category}
+      onChange={handleChange}
+      className="category-dropdown"
+    >
       <option value="category-1">Category 1</option>
       <option value="category-2">Category 2</option>
       <option value="category-3">Category 3</option>

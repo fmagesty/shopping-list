@@ -15,7 +15,9 @@ const Item = () => {
         input.map((item) => (
           <div key={item}>
             <CheckCircle product={item} />
-            <span id={item}>{item}</span>
+            <span id={item} className="item-name">
+              {item}
+            </span>
             <Counter />
             <SelectCategory />
           </div>
