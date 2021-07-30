@@ -30,7 +30,7 @@ const InputItem = () => {
         />
       </label>
       <button>
-        <i class="bi bi-cart-plus" type="submit"></i>
+        <i className="bi bi-cart-plus" type="submit"></i>
       </button>
     </form>
   );
