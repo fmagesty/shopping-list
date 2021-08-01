@@ -18,6 +18,7 @@ const InputItem = () => {
     e.preventDefault();
     // Resets the input field after adding it
     document.getElementById("input-item").value = null;
+    // Check if item is already on the list
     input.includes(item)
       ? alert(`Sorry but ${item} is already on the list`)
       : dispatch(allItems(item));
