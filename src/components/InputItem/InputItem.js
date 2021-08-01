@@ -25,7 +25,7 @@ const InputItem = () => {
           type="text"
           name="input-item"
           id="input-item"
-          placeholder="item name"
+          placeholder="Item name"
           onChange={handleChange}
         />
       </label>

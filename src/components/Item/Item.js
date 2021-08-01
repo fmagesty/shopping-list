@@ -1,7 +1,6 @@
 // import React from "react";
 import React from "react";
 import Counter from "../Counter/Counter";
-import SelectCategory from "../SelectCategory/SelectCategory";
 import CheckCircle from "../CheckCircle/CheckCircle";
 import "./styles.css";
 import { useSelector } from "react-redux";
@@ -19,7 +18,6 @@ const Item = () => {
               {item}
             </span>
             <Counter />
-            <SelectCategory />
           </div>
         ))}
     </div>
