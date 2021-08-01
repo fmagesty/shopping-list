@@ -19,7 +19,7 @@ const InputItem = () => {
     // Resets the input field after adding it
     document.getElementById("input-item").value = null;
     input.includes(item)
-      ? alert(`${item} already on the list`)
+      ? alert(`Sorry but ${item} is already on the list`)
       : dispatch(allItems(item));
     console.log(item);
   };
