@@ -37,7 +37,7 @@ const InputItem = () => {
           onChange={handleChange}
         />
       </label>
-      <button>
+      <button id="submit-btn">
         <i className="bi bi-cart-plus" type="submit"></i>
       </button>
     </form>
