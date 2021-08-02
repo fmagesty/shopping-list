@@ -1,5 +1,5 @@
 // import React from "react";
-import React from "react";
+import React, { useState } from "react";
 import Counter from "../Counter/Counter";
 import CheckCircle from "../CheckCircle/CheckCircle";
 import "./styles.css";
@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 
 const Item = () => {
   const input = useSelector((state) => state.inputItem.value);
+  const [totalPrice, setTotalPrice] = useState(0);
 
   return (
     <div id="item-div">
@@ -20,6 +21,13 @@ const Item = () => {
             <Counter />
           </div>
         ))}
+      <p id="total-price">
+        Total price:{" "}
+        {totalPrice.toLocaleString("pt-br", {
+          style: "currency",
+          currency: "BRL",
+        })}
+      </p>
     </div>
   );
 };
