@@ -19,6 +19,7 @@ const Item = () => {
               {item}
             </span>
             <Counter />
+            <span>price</span>
           </div>
         ))}
       <p id="total-price">
