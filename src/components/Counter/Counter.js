@@ -13,9 +13,7 @@ const Counter = () => {
   return (
     <span id="counter">
       <i className="bi bi-dash-circle" onClick={() => decrement()}></i>
-
       <span id="counter">{count}</span>
-
       <i className="bi-plus-circle" onClick={() => setCount(count + 1)}></i>
     </span>
   );

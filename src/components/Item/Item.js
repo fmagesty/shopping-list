@@ -2,6 +2,8 @@
 import React, { useState } from "react";
 import Counter from "../Counter/Counter";
 import CheckCircle from "../CheckCircle/CheckCircle";
+import AddPrice from '../AddPrice'
+import DisplayPrice from "../DisplayPrice";
 import "./styles.css";
 import { useSelector } from "react-redux";
 
@@ -19,7 +21,8 @@ const Item = () => {
               {item}
             </span>
             <Counter />
-            <span>price</span>
+            <DisplayPrice/>
+            <AddPrice/>
           </div>
         ))}
       <p id="total-price">

@@ -16,11 +16,11 @@ const InputItem = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Resets the input field after adding it
+    // Resets the input field after adding item
     document.getElementById("input-item").value = null;
     // Check if item is already on the list
     input.includes(item)
-      ? alert(`Sorry but ${item} is already on the list`)
+      ? alert(`${item} is already on your list`)
       : dispatch(allItems(item));
     console.log(item);
   };
