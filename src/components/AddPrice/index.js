@@ -1,23 +1,22 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { allPrices } from "./addPriceSlice";
 import { useSelector } from "react-redux";
+import { allItems } from "../InputItem/inputItemSlice";
 
-export default function AddPrice() {
-  const [price, setPrice] = useState([]);
+export default function AddPrice(item) {
+  const input = useSelector((state) => state.inputItem.value);
+  const [price, setPrice] = useState(0)
   const dispatch = useDispatch();
 
-  const input = useSelector((state) => state.itemPrice.value);
-
   const handleClick = (e) => {
-    console.log(`item price is ${price}`);
     e.preventDefault();
-    dispatch(allPrices(price));
+    dispatch(allItems(item.price));
     // this should open a modal(?) for the user to enter the individual item price
   };
 
   const handleChange = (e) => {
     setPrice(e.target.value);
+    {console.log(item.item.name, item.item.price)}
   };
   return (
     <>

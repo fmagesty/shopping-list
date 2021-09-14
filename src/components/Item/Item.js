@@ -3,34 +3,32 @@ import React, { useState } from "react";
 import Counter from "../Counter/Counter";
 import CheckCircle from "../CheckCircle/CheckCircle";
 import AddPrice from '../AddPrice'
-import DisplayPrice from "../DisplayPrice";
 import "./styles.css";
 import { useSelector } from "react-redux";
 
 const Item = () => {
   const input = useSelector((state) => state.inputItem.value);
-  const [totalPrice, setTotalPrice] = useState(0);
 
   return (
     <div id="item-div">
       {input &&
         input.map((item) => (
-          <div key={item}>
+          <div key={item.name}>
             <CheckCircle product={item} />
-            <span id={item} className="item-name">
-              {item}
+            <span id={item.name} className="item-name">
+              {item.name}
             </span>
             <Counter />
-            <DisplayPrice/>
-            <AddPrice/>
+            <AddPrice item={item}/>
+            <span>Item price: {item.price}</span>
           </div>
         ))}
       <p id="total-price">
         Total price:{" "}
-        {totalPrice.toLocaleString("pt-br", {
+        {/* {totalPrice.toLocaleString("pt-br", {
           style: "currency",
           currency: "BRL",
-        })}
+        })} */}
       </p>
     </div>
   );

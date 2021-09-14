@@ -5,11 +5,11 @@ import { allItems } from "./inputItemSlice";
 import { useSelector } from "react-redux";
 
 const InputItem = () => {
-  const [item, setItem] = useState([]);
+  const [item, setItem] = useState({name: '', count: 1, price: 0});
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    setItem(e.target.value);
+    setItem({name: e.target.value, count: 1, price: 0});
   };
 
   const input = useSelector((state) => state.inputItem.value);
@@ -22,7 +22,6 @@ const InputItem = () => {
     input.includes(item)
       ? alert(`${item} is already on your list`)
       : dispatch(allItems(item));
-    console.log(item);
   };
 
   return (
