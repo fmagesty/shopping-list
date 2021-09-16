@@ -1,5 +1,5 @@
 // import React from "react";
-import React, { useState } from "react";
+import React from "react";
 import Counter from "../Counter/Counter";
 import CheckCircle from "../CheckCircle/CheckCircle";
 import AddPrice from '../AddPrice'
@@ -7,19 +7,19 @@ import "./styles.css";
 import { useSelector } from "react-redux";
 
 const Item = () => {
-  const input = useSelector((state) => state.inputItem.value);
+  const names = useSelector((state) => state.inputItemName.value);
 
   return (
     <div id="item-div">
-      {input &&
-        input.map((item) => (
-          <div key={item.name}>
+      {names &&
+        names.map((item) => (
+          <div key={item}>
             <CheckCircle product={item} />
-            <span id={item.name} className="item-name">
-              {item.name}
+            <span id={item} className="item-name">
+              {item}
             </span>
             <Counter />
-            <AddPrice item={item}/>
+            <AddPrice/>
             <span>Item price: {item.price}</span>
           </div>
         ))}

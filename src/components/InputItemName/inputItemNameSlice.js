@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const inputItemSlice = createSlice({
-  name: "inputItem",
+export const inputItemNameSlice = createSlice({
+  name: "inputItemName",
   initialState: {
     value: [],
   },
@@ -13,6 +13,6 @@ export const inputItemSlice = createSlice({
 });
 
 // Action creators are generated for each case reducer function
-export const { allItems } = inputItemSlice.actions;
+export const { allItems } = inputItemNameSlice.actions;
 
-export default inputItemSlice.reducer;
+export default inputItemNameSlice.reducer;

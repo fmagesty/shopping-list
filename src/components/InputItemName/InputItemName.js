@@ -1,27 +1,28 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { useDispatch } from "react-redux";
-import { allItems } from "./inputItemSlice";
+import { allItems } from "./inputItemNameSlice";
 import { useSelector } from "react-redux";
 
-const InputItem = () => {
-  const [item, setItem] = useState({name: '', count: 1, price: 0});
+const InputItemName = () => {
+  const input = useSelector((state) => state.inputItemName.value);
+  const [itemName, setItemName] = useState('');
   const dispatch = useDispatch();
 
   const handleChange = (e) => {
-    setItem({name: e.target.value, count: 1, price: 0});
+    setItemName(e.target.value);
+    console.log('item names: ' + input)
   };
 
-  const input = useSelector((state) => state.inputItem.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Resets the input field after adding item
     document.getElementById("input-item").value = null;
     // Check if item is already on the list
-    input.includes(item)
-      ? alert(`${item} is already on your list`)
-      : dispatch(allItems(item));
+    input.includes(itemName)
+      ? alert(`${itemName} is already on your list`)
+      : dispatch(allItems(itemName));
   };
 
   return (
@@ -43,4 +44,4 @@ const InputItem = () => {
   );
 };
 
-export default InputItem;
+export default InputItemName;
