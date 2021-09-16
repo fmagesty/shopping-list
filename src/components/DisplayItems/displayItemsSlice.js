@@ -7,14 +7,7 @@ export const displayItemsSlice = createSlice({
   },
   reducers: {
     allItems: (state, action) => {
-      if (state.value.indexOf(action.payload.itemName) === -1) {
-        state.value.push({itemName: action.payload, price: 0, count: 1})
-        console.log(action.payload)
-      }
-      else {
-        state.value.push(action.payload);
-        console.log('action.payload nao pode ser inserido')
-      }
+      state.value.push({name: action.payload, price: 0, count: 1})
     },
   },
 });

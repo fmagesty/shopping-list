@@ -7,26 +7,25 @@ import "./styles.css";
 import { useSelector } from "react-redux";
 
 const DisplayItems = () => {
-  const itemNames = useSelector((state) => state.inputItemName.value);
   const allItems = useSelector((state) => state.allItems.value);
 
   return (
     <div id="item-div">
-      {itemNames &&
-        itemNames.map((name) => (
-          <div key={name}>
-            <CheckCircle product={name} />
-            <span id={name} className="item-name">
-              {name}
+      {allItems &&
+        allItems.map((item) => (
+          <div key={item.name}>
+            <CheckCircle product={item.name}/>
+            <span id={item.name} className="item-name">
+              {item.name}
             </span>
             <Counter />
-            <AddPrice itemName={name}/>
+            <AddPrice name={item.name}/>
           </div>
         ))}
       <p id="total-price">
         Total price: todo
       </p>
-        <ul>{allItems && allItems.map((item) => <li>{item.itemName}--{item.price}--{item.price}</li>)}</ul>
+        <ul>{allItems && allItems.map((item) => <li>{item.name}--{item.price}--{item.price}</li>)}</ul>
     </div>
   );
 };
