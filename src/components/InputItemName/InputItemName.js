@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./styles.css";
 import { useDispatch } from "react-redux";
-import { allItems } from "./inputItemNameSlice";
+import { allNames } from "./inputItemNameSlice";
 import { useSelector } from "react-redux";
 
 const InputItemName = () => {
@@ -22,7 +22,7 @@ const InputItemName = () => {
     // Check if item is already on the list
     input.includes(itemName)
       ? alert(`${itemName} is already on your list`)
-      : dispatch(allItems(itemName));
+      : dispatch(allNames(itemName));
   };
 
   return (

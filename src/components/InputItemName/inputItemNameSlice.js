@@ -6,13 +6,13 @@ export const inputItemNameSlice = createSlice({
     value: [],
   },
   reducers: {
-    allItems: (state, action) => {
+    allNames: (state, action) => {
       state.value.push(action.payload);
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { allItems } = inputItemNameSlice.actions;
+export const { allNames } = inputItemNameSlice.actions;
 
 export default inputItemNameSlice.reducer;

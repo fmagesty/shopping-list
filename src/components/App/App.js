@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import Item from "../Item/Item";
+import DisplayItems from "../DisplayItems/DisplayItems";
 import InputItemName from "../InputItemName/InputItemName";
 import Header from "../Header/Header";
 
@@ -9,7 +9,7 @@ const App = () => {
     <>
       <Header />
       <InputItemName />
-      <Item />
+      <DisplayItems />
     </>
   );
 };

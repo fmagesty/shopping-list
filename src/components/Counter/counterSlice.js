@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-export const addPriceSlice = createSlice({
-  name: "itemPrice",
+export const counterSlice = createSlice({
+  name: "counter",
   initialState: {
-    value: 0,
+    value: 1,
   },
   reducers: {
-    allPrices: (state, action) => {
+    allCounters: (state, action) => {
       state.value = action.payload;
     },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { allPrices } = addPriceSlice.actions;
+export const { allCounters } = counterSlice.actions;
 
-export default addPriceSlice.reducer;
+export default counterSlice.reducer;
