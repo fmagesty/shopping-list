@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { allPrices } from "./addPriceSlice";
+import { allItems } from "../DisplayItems/displayItemsSlice";
 
-export default function AddPrice() {
+export default function AddPrice(itemName) {
   const [price, setPrice] = useState(0)
   const dispatch = useDispatch();
   const counter = useSelector((state) => state.counter.value);
+  const item = useSelector((state) => state.allItems.value);
 
   const handleChange = (e) => {
+    console.log(item)
     setPrice(e.target.value * counter);
-    dispatch(allPrices(price));
+    dispatch(allItems(item.price =  price));
+    console.log(item)
   };
 
   return (

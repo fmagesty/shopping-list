@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 
 const DisplayItems = () => {
   const itemNames = useSelector((state) => state.inputItemName.value);
+  const allItems = useSelector((state) => state.allItems.value);
 
   return (
     <div id="item-div">
@@ -19,12 +20,13 @@ const DisplayItems = () => {
               {name}
             </span>
             <Counter />
-            <AddPrice item={name}/>
+            <AddPrice itemName={name}/>
           </div>
         ))}
       <p id="total-price">
         Total price: todo
       </p>
+        <ul>{allItems && allItems.map((item) => <li>{item.itemName}--{item.price}--{item.price}</li>)}</ul>
     </div>
   );
 };
