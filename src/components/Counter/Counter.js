@@ -10,7 +10,7 @@ const Counter = () => {
   const dispatch = useDispatch();
 
   const handleClick = (countModifier) => {
-    if (count === 0 && countModifier === -1) {
+    if (count === 1 && countModifier === -1) {
       return count
     }
     setCount(count + countModifier)
