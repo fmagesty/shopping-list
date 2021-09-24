@@ -16,3 +16,6 @@ export const displayItemsSlice = createSlice({
 export const { allItems } = displayItemsSlice.actions;
 
 export default displayItemsSlice.reducer;
+
+
+// just a test
