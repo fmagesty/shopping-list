@@ -2,27 +2,26 @@ import React, { useState } from "react";
 import "./styles.css";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { allItems } from "../DisplayItems/displayItemsSlice";
+import { addItem } from "../DisplayItems/displayItemsSlice";
 
 const InputItemName = () => {
-  const itemList = useSelector((state) => state.allItems.value);
-  const [name, setName] = useState('');
+  const itemList = useSelector((state) => state.addItem.value);
   const dispatch = useDispatch();
+  const [name, setName] = useState('');
 
   const handleChange = (e) => {
     setName(e.target.value);
-    console.log(name)
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(itemList, itemList.name)
+    console.log('itemList = ' + itemList)
     // Resets the input field after adding item
     document.getElementById("input-item").value = null;
     // Check if item is already on the list
-    (itemList.find(names => names.name === name))
+    (itemList.find(item => item.name === name))
       ? alert(`${name} is already on your list`)
-      : dispatch(allItems(name))
+      : dispatch(addItem(name))
   };
 
   return (

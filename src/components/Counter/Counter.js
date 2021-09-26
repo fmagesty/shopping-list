@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
 
 import "./styles.css";
-import { useDispatch } from "react-redux";
-import { allCounters } from "./counterSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { addItem, addCounter } from "../DisplayItems/displayItemsSlice";
 
-
-const Counter = () => {
-  const [count, setCount] = useState(1);
+const Counter = (name) => {
+  const itemList = useSelector((state) => state.addItem.value);
   const dispatch = useDispatch();
+  const [count, setCount] = useState(1);
 
   const handleClick = (countModifier) => {
     if (count === 1 && countModifier === -1) {
@@ -16,7 +16,7 @@ const Counter = () => {
     setCount(count + countModifier)
   }
   useEffect(() => {
-    dispatch(allCounters(count));
+    dispatch(addCounter(count))
 }, [count, dispatch]);
 
   return (

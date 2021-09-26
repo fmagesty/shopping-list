@@ -7,7 +7,7 @@ import "./styles.css";
 import { useSelector } from "react-redux";
 
 const DisplayItems = () => {
-  const allItems = useSelector((state) => state.allItems.value);
+  const allItems = useSelector((state) => state.addItem.value);
 
   return (
     <div id="item-div">
@@ -18,7 +18,7 @@ const DisplayItems = () => {
             <span id={item.name} className="item-name">
               {item.name}
             </span>
-            <Counter />
+            <Counter name={item.name}/>
             <AddPrice name={item.name}/>
           </div>
         ))}
