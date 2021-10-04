@@ -4,20 +4,21 @@ import "./styles.css";
 import { useDispatch, useSelector } from "react-redux";
 import { addItem, addCounter } from "../DisplayItems/displayItemsSlice";
 
-const Counter = (name) => {
+const Counter = (item) => {
   const itemList = useSelector((state) => state.addItem.value);
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
 
   const handleClick = (countModifier) => {
     if (count === 1 && countModifier === -1) {
+      console.log(item, item.name)
       return count
     }
     setCount(count + countModifier)
   }
   useEffect(() => {
-    dispatch(addCounter(count))
-}, [count, dispatch]);
+    dispatch(addCounter(count, item.name))
+}, [count, dispatch, item.name]);
 
   return (
     <span id="counter">
