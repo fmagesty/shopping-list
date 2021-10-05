@@ -5,7 +5,7 @@ import { useSelector } from "react-redux";
 import { addItem } from "../DisplayItems/displayItemsSlice";
 
 const InputItemName = () => {
-  const itemList = useSelector((state) => state.addItem.value);
+  const itemList = useSelector((state) => state.addItem.itemList);
   const dispatch = useDispatch();
   const [name, setName] = useState('');
 
@@ -15,7 +15,6 @@ const InputItemName = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('itemList = ' + itemList)
     // Resets the input field after adding item
     document.getElementById("input-item").value = null;
     // Check if item is already on the list

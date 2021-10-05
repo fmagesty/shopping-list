@@ -1,19 +1,17 @@
 import React, { useState} from 'react';
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { addItem } from "../DisplayItems/displayItemsSlice";
+import { addPrice } from "../DisplayItems/displayItemsSlice";
 
 export default function AddPrice(name) {
   const [price, setPrice] = useState(0)
   const dispatch = useDispatch();
-  const itemList = useSelector((state) => state.addItem.value);
+  const itemList = useSelector((state) => state.itemList);
+
 
   const handleChange = (e) => {
-    // setPrice(e.target.value * counter);
-    // dispatch(addItem(item.price = price));
-    // dispatch(addItem(itemList.price = price));
-    // JSON.parse(JSON.stringify(result));
-    // result = Object.assign({}, result)
+    setPrice(e.target.value * itemList.counter);
+    dispatch(addPrice(price));
   };
 
 

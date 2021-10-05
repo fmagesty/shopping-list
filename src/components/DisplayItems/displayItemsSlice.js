@@ -1,23 +1,22 @@
-import { createReducer, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 export const displayItemsSlice = createSlice({
   name: 'displayItems',
   initialState: {
-    value: [],
+    itemList: [],
   },
   reducers: {
     addItem: (state, action) => {
-      // Redux Toolkit allows us to write "mutating" logic in reducers. It
-      // doesn't actually mutate the state because it uses the Immer library,
-      // which detects changes to a "draft state" and produces a brand new
-      // immutable state based off those changes
-      state.value.push({ name: action.payload, price: 0, count: 1});
+      state.itemList.push({name: action.payload, counter: 1, price: 1});
     },
     addCounter: (state, action) => {
-      state.value.count = action.payload
+      console.log(state.itemList, action.payload)
+    },
+    addPrice: (state, action) => {
+      return
     },
   },
 })
 
-export const { addItem, addCounter} = displayItemsSlice.actions
+export const { addItem, addCounter, addPrice} = displayItemsSlice.actions
 export default displayItemsSlice.reducer
