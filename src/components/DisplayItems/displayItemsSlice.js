@@ -23,7 +23,7 @@ export const displayItemsSlice = createSlice({
     addPrice: (state, action) => {
       state.itemList.find((item) =>
         item.name === state.currentItemName
-          ? (item.price = action.payload * item.counter)
+          ? (item.price = action.payload)
           : null
       );
     },
