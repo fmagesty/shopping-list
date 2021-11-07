@@ -1,24 +1,26 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from "react";
 import "./styles.css";
-import { useDispatch, useSelector } from "react-redux";
-import { addCounter } from "../DisplayItems/displayItemsSlice";
+import { useDispatch } from "react-redux";
+import {
+  addCounter,
+  addCurrentItemName,
+} from "../DisplayItems/displayItemsSlice";
 
-const Counter = () => {
+const Counter = (itemName) => {
   const dispatch = useDispatch();
   const [count, setCount] = useState(1);
-  const itemList = useSelector((state) => state.addItem.itemList);
+  itemName = itemName.itemName;
 
   const handleClick = (countModifier) => {
     if (count === 1 && countModifier === -1) {
-      return count
+      return count;
     }
-    setCount(count + countModifier)
-    console.log(itemList)
-  }
+    setCount(count + countModifier);
+  };
   useEffect(() => {
-    dispatch(addCounter(count))
-}, [count, dispatch]);
+    dispatch(addCurrentItemName(itemName));
+    dispatch(addCounter(count));
+  }, [count, dispatch, itemName]);
 
   return (
     <span id="counter">

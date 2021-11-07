@@ -5,6 +5,6 @@ export default configureStore({
   reducer: {
     addItem: displayItemsReducer,
     addCounter: displayItemsReducer,
-    addPrice: displayItemsReducer
+    addPrice: displayItemsReducer,
   },
 });
