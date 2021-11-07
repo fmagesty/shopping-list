@@ -7,7 +7,7 @@ import { addItem } from "../DisplayItems/displayItemsSlice";
 const InputItemName = () => {
   const itemList = useSelector((state) => state.addItem.itemList);
   const dispatch = useDispatch();
-  const [name, setName] = useState('');
+  const [name, setName] = useState("");
 
   const handleChange = (e) => {
     setName(e.target.value);
@@ -15,12 +15,10 @@ const InputItemName = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Resets the input field after adding item
     document.getElementById("input-item").value = null;
-    // Check if item is already on the list
-    (itemList.find(item => item.name === name))
+    itemList.find((item) => item.name === name)
       ? alert(`${name} is already on your list`)
-      : dispatch(addItem(name))
+      : dispatch(addItem(name));
   };
 
   return (
@@ -36,7 +34,7 @@ const InputItemName = () => {
         />
       </label>
       <button id="submit-btn">
-        <i className="bi bi-cart-plus" type="submit"></i>
+        <i className="bi bi-cart-plus-fill" type="submit"></i>
       </button>
     </form>
   );

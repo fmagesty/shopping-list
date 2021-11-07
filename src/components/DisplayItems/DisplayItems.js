@@ -30,14 +30,6 @@ const DisplayItems = () => {
           </div>
         ))}
       <TotalPrice />
-      <ul>
-        {itemList &&
-          itemList.map((item) => (
-            <li key={item.name}>
-              {item.name}--{item.price}--{item.price}
-            </li>
-          ))}
-      </ul>
     </div>
   );
 };
