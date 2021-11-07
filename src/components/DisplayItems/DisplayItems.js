@@ -3,6 +3,7 @@ import React from "react";
 import Counter from "../Counter/Counter";
 import CheckCircle from "../CheckCircle/CheckCircle";
 import AddPrice from "../AddPrice/AddPrice";
+import { TotalPrice } from "../TotalPrice/TotalPrice";
 import "./styles.css";
 import { useSelector } from "react-redux";
 
@@ -20,7 +21,6 @@ const DisplayItems = () => {
             </span>
             <Counter itemName={item.name} />
             <AddPrice itemName={item.name} />
-            {console.log(item.price)}
             <span>
               {(item.price * item.counter).toLocaleString("pt-br", {
                 style: "currency",
@@ -29,11 +29,11 @@ const DisplayItems = () => {
             </span>
           </div>
         ))}
-      <p id="total-price">Total price: todo</p>
+      <TotalPrice />
       <ul>
         {itemList &&
           itemList.map((item) => (
-            <li>
+            <li key={item.name}>
               {item.name}--{item.price}--{item.price}
             </li>
           ))}
