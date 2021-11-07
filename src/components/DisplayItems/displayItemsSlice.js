@@ -21,7 +21,11 @@ export const displayItemsSlice = createSlice({
       );
     },
     addPrice: (state, action) => {
-      return;
+      state.itemList.find((item) =>
+        item.name === state.currentItemName
+          ? (item.price = action.payload * item.counter)
+          : null
+      );
     },
   },
 });

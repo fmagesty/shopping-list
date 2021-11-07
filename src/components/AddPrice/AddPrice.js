@@ -1,27 +1,26 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
-import { addPrice } from "../DisplayItems/displayItemsSlice";
+import {
+  addPrice,
+  addCurrentItemName,
+} from "../DisplayItems/displayItemsSlice";
 
-export default function AddPrice(name) {
-  const [price, setPrice] = useState(0)
+export default function AddPrice(itemName) {
+  const [price, setPrice] = useState(0);
   const dispatch = useDispatch();
-  const itemList = useSelector((state) => state.itemList);
-
-
+  itemName = itemName.itemName;
   const handleChange = (e) => {
-    setPrice(e.target.value * itemList.counter);
-    dispatch(addPrice(price));
+    setPrice(e.target.value);
   };
 
+  useEffect(() => {
+    dispatch(addCurrentItemName(itemName));
+    dispatch(addPrice(price));
+  }, [dispatch, itemName, price]);
 
   return (
     <>
-      <span>{price.toLocaleString("pt-br", {
-          style: "currency",
-          currency: "BRL",
-        })}</span>
-      <input placeholder="Item price" type='number' onChange={handleChange} />
+      <input placeholder="Item price" type="number" onChange={handleChange} />
     </>
   );
 }

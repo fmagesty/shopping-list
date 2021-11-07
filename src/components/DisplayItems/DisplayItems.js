@@ -11,7 +11,6 @@ const DisplayItems = () => {
 
   return (
     <div id="item-div">
-      {console.log(itemList)}
       {itemList &&
         itemList.map((item) => (
           <div key={item.name}>
@@ -20,7 +19,14 @@ const DisplayItems = () => {
               {item.name}
             </span>
             <Counter itemName={item.name} />
-            <AddPrice />
+            <AddPrice itemName={item.name} />
+            {console.log(item.price)}
+            <span>
+              {(item.price * item.counter).toLocaleString("pt-br", {
+                style: "currency",
+                currency: "BRL",
+              })}
+            </span>
           </div>
         ))}
       <p id="total-price">Total price: todo</p>
