@@ -3,7 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import "./styles.css";
 
-export default function ColorSelector() {
+export default function ColorSelectorModal() {
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
