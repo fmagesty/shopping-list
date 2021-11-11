@@ -1,5 +1,8 @@
 import React from "react";
+import "./styles.css";
 
 export default function ColorSelector() {
-  return <>im color selector</>;
+  const colorOptions = ["red", "green", "blue"];
+
+  return <button id="color-selector">#</button>;
 }
