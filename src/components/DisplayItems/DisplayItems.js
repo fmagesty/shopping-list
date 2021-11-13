@@ -13,6 +13,7 @@ const DisplayItems = () => {
 
   return (
     <div id="item-div">
+      <h4 id="title">Added items:</h4>
       {itemList &&
         itemList.map((item) => (
           <div key={item.name}>
