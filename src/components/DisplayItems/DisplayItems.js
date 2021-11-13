@@ -16,7 +16,6 @@ const DisplayItems = () => {
       {itemList &&
         itemList.map((item) => (
           <div key={item.name}>
-            <ColorSelectorDropdown />
             <CheckCircle product={item.name} />
             <span id={item.name} className="item-name">
               {item.name}
@@ -29,6 +28,7 @@ const DisplayItems = () => {
                 currency: "BRL",
               })}
             </span>
+            <ColorSelectorDropdown />
           </div>
         ))}
       <TotalPrice />
