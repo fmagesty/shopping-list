@@ -1,3 +1,3 @@
 # Shopping List
 
-This is a basic shopping list app
+[WIP] This is a shopping list app
