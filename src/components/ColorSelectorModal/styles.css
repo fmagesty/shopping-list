@@ -1,3 +1,32 @@
-#color-selector {
-  background: steelblue;
+#red {
+  background: red;
+  color: red;
+}
+#blue {
+  background: cyan;
+  color: cyan;
+}
+#green {
+  background: green;
+  color: green;
+}
+#pink {
+  background: mediumvioletred;
+  color: mediumvioletred;
+}
+#orange {
+  background: orange;
+  color: orange;
+}
+#brown {
+  background: saddlebrown;
+  color: saddlebrown;
+}
+#yellow {
+  background: yellow;
+  color: yellow;
+}
+#purple {
+  background: purple;
+  color: purple;
 }
