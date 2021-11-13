@@ -4,7 +4,7 @@ import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
 import "./styles.css";
 
-export default function ColorSelectorModal() {
+export default function ColorSelectorDropdown() {
   let currentBgColor = "black";
 
   const handleClick = (selectedColor) => {
