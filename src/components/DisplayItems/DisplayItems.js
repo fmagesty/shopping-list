@@ -6,6 +6,7 @@ import AddPrice from "../AddPrice/AddPrice";
 import { TotalPrice } from "../TotalPrice/TotalPrice";
 import "./styles.css";
 import { useSelector } from "react-redux";
+import ColorSelectorDropdown from "../ColorSelectorModal/ColorSelectorDropdown";
 
 const DisplayItems = () => {
   const itemList = useSelector((state) => state.addItem.itemList);
@@ -15,6 +16,7 @@ const DisplayItems = () => {
       {itemList &&
         itemList.map((item) => (
           <div key={item.name}>
+            <ColorSelectorDropdown />
             <CheckCircle product={item.name} />
             <span id={item.name} className="item-name">
               {item.name}
