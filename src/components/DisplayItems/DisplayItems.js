@@ -24,9 +24,9 @@ const DisplayItems = () => {
             <Counter itemName={item.name} />
             <AddPrice itemName={item.name} />
             <span>
-              {(item.price * item.counter).toLocaleString("pt-br", {
+              {(item.price * item.counter).toLocaleString("en-us", {
                 style: "currency",
-                currency: "BRL",
+                currency: "USD",
               })}
             </span>
             <ColorSelectorDropdown itemName={item.name} />
