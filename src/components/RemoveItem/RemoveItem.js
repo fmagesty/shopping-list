@@ -1,6 +1,6 @@
 import React from "react";
 import "./styles.css";
-import { useSelector, useDispatch } from "react-redux";
+import { useDispatch } from "react-redux";
 import {
   addCurrentItemName,
   removeItem,
@@ -8,7 +8,6 @@ import {
 
 export default function RemoveItem(itemName) {
   const dispatch = useDispatch();
-  const itemList = useSelector((state) => state.addItem.itemList);
   itemName = itemName.itemName;
 
   const handleClick = (itemName) => {
