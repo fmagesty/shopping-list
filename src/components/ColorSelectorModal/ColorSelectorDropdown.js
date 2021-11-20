@@ -1,20 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import "./styles.css";
 import ButtonGroup from "react-bootstrap/ButtonGroup";
 import Dropdown from "react-bootstrap/Dropdown";
 import DropdownButton from "react-bootstrap/DropdownButton";
-import { BsSquare } from "react-icons/bs";
-import "./styles.css";
+import { useDispatch } from "react-redux";
+import {
+  addColor,
+  addCurrentItemName,
+} from "../DisplayItems/displayItemsSlice";
 
-export default function ColorSelectorDropdown() {
-  const [color, setColor] = useState("black");
+export default function ColorSelectorDropdown(itemName) {
+  const [color, setColor] = useState("white");
+  const dispatch = useDispatch();
+  itemName = itemName.itemName;
 
   const handleClick = (selectedColor) => {
     setColor(selectedColor);
   };
 
+  useEffect(() => {
+    dispatch(addCurrentItemName(itemName));
+    dispatch(addColor(color));
+  }, [color, dispatch, itemName]);
+
   return (
     <>
-      <BsSquare style={{ background: color }} className="category-color" />
       <DropdownButton
         as={ButtonGroup}
         title="Category"
