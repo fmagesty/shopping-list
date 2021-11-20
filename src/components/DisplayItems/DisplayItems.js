@@ -5,7 +5,8 @@ import CheckCircle from "../CheckCircle/CheckCircle";
 import Counter from "../Counter/Counter";
 import ItemName from "../ItemName/ItemName";
 import AddPrice from "../AddPrice/AddPrice";
-import ColorSelectorDropdown from "../ColorSelectorModal/ColorSelectorDropdown";
+import RemoveItem from "../RemoveItem/RemoveItem";
+import ColorSelectorDropdown from "../ColorSelectorDropdown/ColorSelectorDropdown";
 import { TotalPrice } from "../TotalPrice/TotalPrice";
 import { useSelector } from "react-redux";
 
@@ -29,6 +30,7 @@ const DisplayItems = () => {
               })}
             </span>
             <ColorSelectorDropdown itemName={item.name} />
+            <RemoveItem itemName={item.name} />
           </div>
         ))}
       <TotalPrice />
