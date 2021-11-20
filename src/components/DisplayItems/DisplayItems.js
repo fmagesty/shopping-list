@@ -28,7 +28,7 @@ const DisplayItems = () => {
                 currency: "BRL",
               })}
             </span>
-            <ColorSelectorDropdown />
+            <ColorSelectorDropdown itemName={item.name} />
           </div>
         ))}
       <TotalPrice />
