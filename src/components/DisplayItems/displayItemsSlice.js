@@ -8,7 +8,12 @@ export const displayItemsSlice = createSlice({
   },
   reducers: {
     addItem: (state, action) => {
-      state.itemList.push({ name: action.payload, counter: 1, price: 1 });
+      state.itemList.push({
+        name: action.payload,
+        counter: 1,
+        price: 1,
+        color: "white",
+      });
     },
     addCurrentItemName: (state, action) => {
       state.currentItemName = action.payload;
@@ -27,9 +32,16 @@ export const displayItemsSlice = createSlice({
           : null
       );
     },
+    addColor: (state, action) => {
+      state.itemList.find((item) =>
+        item.name === state.currentItemName
+          ? (item.color = action.payload)
+          : null
+      );
+    },
   },
 });
 
-export const { addItem, addCurrentItemName, addCounter, addPrice } =
+export const { addItem, addCurrentItemName, addCounter, addPrice, addColor } =
   displayItemsSlice.actions;
 export default displayItemsSlice.reducer;
