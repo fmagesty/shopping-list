@@ -13,6 +13,8 @@ import { useSelector } from "react-redux";
 const DisplayItems = () => {
   const itemList = useSelector((state) => state.addItem.itemList);
 
+  console.log(itemList);
+
   return (
     <div id="item-div">
       <h4 id="title">Added items:</h4>
@@ -22,13 +24,7 @@ const DisplayItems = () => {
             <CheckCircle product={item.name} />
             <ItemName itemName={item.name} />
             <Counter itemName={item.name} />
-            <AddPrice itemName={item.name} />
-            <span>
-              {(item.price * item.counter).toLocaleString("en-us", {
-                style: "currency",
-                currency: "USD",
-              })}
-            </span>
+            <AddPrice itemName={item.name} itemCounter={item.counter} />
             <ColorSelectorDropdown itemName={item.name} />
             <RemoveItem itemName={item.name} />
           </div>

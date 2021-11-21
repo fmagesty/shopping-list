@@ -5,10 +5,12 @@ import {
   addCurrentItemName,
 } from "../DisplayItems/displayItemsSlice";
 
-export default function AddPrice(itemName) {
-  const [price, setPrice] = useState(0);
+export default function AddPrice(props) {
   const dispatch = useDispatch();
-  itemName = itemName.itemName;
+  const [price, setPrice] = useState(55);
+  const itemName = props.itemName;
+  const itemCounter = props.itemCounter;
+
   const handleChange = (e) => {
     setPrice(e.target.value);
   };
@@ -21,6 +23,12 @@ export default function AddPrice(itemName) {
   return (
     <>
       <input placeholder="Item price" type="number" onChange={handleChange} />
+      <span>
+        {(price * itemCounter).toLocaleString("en-us", {
+          style: "currency",
+          currency: "USD",
+        })}
+      </span>
     </>
   );
 }
