@@ -4,7 +4,7 @@ import "./styles.css";
 import CheckCircle from "../CheckCircle/CheckCircle";
 import Counter from "../Counter/Counter";
 import ItemName from "../ItemName/ItemName";
-import AddPrice from "../AddPrice/AddPrice";
+import ItemPrice from "../ItemPrice/ItemPrice";
 import RemoveItem from "../RemoveItem/RemoveItem";
 import ColorSelectorDropdown from "../ColorSelectorDropdown/ColorSelectorDropdown";
 import { TotalPrice } from "../TotalPrice/TotalPrice";
@@ -12,8 +12,6 @@ import { useSelector } from "react-redux";
 
 const DisplayItems = () => {
   const itemList = useSelector((state) => state.addItem.itemList);
-
-  console.log(itemList);
 
   return (
     <div id="item-div">
@@ -24,7 +22,7 @@ const DisplayItems = () => {
             <CheckCircle product={item.name} />
             <ItemName itemName={item.name} />
             <Counter itemName={item.name} />
-            <AddPrice itemName={item.name} itemCounter={item.counter} />
+            <ItemPrice itemName={item.name} itemCounter={item.counter} />
             <ColorSelectorDropdown itemName={item.name} />
             <RemoveItem itemName={item.name} />
           </div>

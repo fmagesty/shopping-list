@@ -5,9 +5,9 @@ import {
   addCurrentItemName,
 } from "../DisplayItems/displayItemsSlice";
 
-export default function AddPrice(props) {
+export default function ItemPrice(props) {
   const dispatch = useDispatch();
-  const [price, setPrice] = useState(55);
+  const [price, setPrice] = useState(0);
   const itemName = props.itemName;
   const itemCounter = props.itemCounter;
 
