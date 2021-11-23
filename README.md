@@ -10,4 +10,7 @@ todo/features:
 - sort items by name/price/quantity/category
 
 todo/bugs:
-- price input not accepting floats (probably because I'm converting to brl)
+
+
+todo/styles:
+- everything. there is no style yet. for now its every feature on the same line and make sure everything works
