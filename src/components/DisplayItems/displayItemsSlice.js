@@ -45,6 +45,13 @@ export const displayItemsSlice = createSlice({
         1
       );
     },
+    editItemName: (state, action) => {
+      state.itemList.find((item) =>
+      item.name === state.currentItemName ?
+      (item.name = action.payload) :
+      null
+      );
+    },
   },
 });
 
@@ -55,5 +62,6 @@ export const {
   addPrice,
   addColor,
   removeItem,
+  editItemName,
 } = displayItemsSlice.actions;
 export default displayItemsSlice.reducer;
