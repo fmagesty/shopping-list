@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import "./styles.css";
-import { useDispatch } from "react-redux";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addItem } from "../DisplayItems/displayItemsSlice";
 
 const InputItemName = () => {
