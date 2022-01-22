@@ -3,20 +3,17 @@ import "./styles.css";
 import { useSelector } from "react-redux";
 
 export default function ItemName(itemName) {
-  const itemList = useSelector((state) => state.addItem.itemList);
   itemName = itemName.itemName;
+  const itemList = useSelector((state) => state.addItem.itemList);
+  const currentItems = itemList.find((item) => item.name === itemName);
+  let selectedColor = currentItems.color;
 
-  const currentItem = itemList.find((item) => item.name === itemName);
-  let selectedColor = currentItem.color;
-
-  const handleEditItemName = () => {
-    console.log('this is handle edititemname')
+  const handleEditItemName = (itemName) => {
+    console.log(itemName)
   }
-
 
   return (
     <>
-
     <span
       id={itemName}
       className="item-name"
@@ -26,7 +23,7 @@ export default function ItemName(itemName) {
       >
       {itemName}
     </span>
-    <i className="bi bi-pencil" onClick={() => handleEditItemName()}></i>
+    <i className="bi bi-pencil" onClick={() => handleEditItemName(itemName)}></i>
     </>
   );
 }
