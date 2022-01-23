@@ -12,6 +12,8 @@ todo/features:
 
 todo/bugs:
 
+- Possible to enter empty string with X number of blank spaces as the item name
+
 todo/styles:
 
 - Everything. there is no style yet. for now its every feature on the same line and make sure everything works
