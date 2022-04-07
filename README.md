@@ -13,4 +13,4 @@ todo/bugs:
 
 todo/styles:
 
-- Everything. there is no style yet. for now its every feature on the same line and make sure everything works
+- Everything. there is no style yet. for now its every feature on the same row and make sure everything works
