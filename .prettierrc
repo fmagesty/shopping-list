@@ -11,7 +11,7 @@
   "semi": true,
   "singleQuote": true,
   "trailingComma": "none",
-  "useTabs": false,
+  "useTabs": true,
   "vueIndentScriptAndStyle": false,
   "printWidth": 140,
   "tabWidth": 2,
