@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from 'react';
-import { useDispatch } from 'react-redux';
-import { addPrice, addCurrentItemName } from '../DisplayItems/displayItemsSlice';
+import React, { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { addPrice, addCurrentItemName } from "../DisplayItems/displayItemsSlice";
 
 export default function ItemPrice(itemName) {
 	const dispatch = useDispatch();
@@ -21,9 +21,9 @@ export default function ItemPrice(itemName) {
 		<>
 			<input placeholder="Item price" type="number" onChange={handleChange} />
 			<span>
-				{(price * itemCounter).toLocaleString('en-us', {
-					style: 'currency',
-					currency: 'USD'
+				{(price * itemCounter).toLocaleString("en-us", {
+					style: "currency",
+					currency: "USD"
 				})}
 			</span>
 		</>

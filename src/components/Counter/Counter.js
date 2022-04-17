@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from 'react';
-import './styles.css';
-import { useDispatch } from 'react-redux';
-import { addCounter, addCurrentItemName } from '../DisplayItems/displayItemsSlice';
+import React, { useState, useEffect } from "react";
+import "./styles.css";
+import { useDispatch } from "react-redux";
+import { addCounter, addCurrentItemName } from "../DisplayItems/displayItemsSlice";
 
 const Counter = (itemName) => {
 	const dispatch = useDispatch();

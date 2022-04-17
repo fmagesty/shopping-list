@@ -1,10 +1,10 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 export const displayItemsSlice = createSlice({
-	name: 'displayItems',
+	name: "displayItems",
 	initialState: {
 		itemList: [],
-		currentItemName: ''
+		currentItemName: ""
 	},
 	reducers: {
 		addItem: (state, action) => {
@@ -12,7 +12,7 @@ export const displayItemsSlice = createSlice({
 				name: action.payload,
 				counter: 1,
 				price: 1,
-				color: 'white'
+				color: "white"
 			});
 		},
 		addCurrentItemName: (state, action) => {

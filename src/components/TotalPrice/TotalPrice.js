@@ -1,5 +1,5 @@
-import React from 'react';
-import { useSelector } from 'react-redux';
+import React from "react";
+import { useSelector } from "react-redux";
 
 export const TotalPrice = () => {
 	let totalPrice = 0;
@@ -10,9 +10,9 @@ export const TotalPrice = () => {
 		<>
 			<p id="total-price">
 				Total price:
-				{totalPrice.toLocaleString('en-us', {
-					style: 'currency',
-					currency: 'USD'
+				{totalPrice.toLocaleString("en-us", {
+					style: "currency",
+					currency: "USD"
 				})}
 			</p>
 		</>

@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
-import './styles.css';
+import React, { useState } from "react";
+import "./styles.css";
 
 const SelectCategory = () => {
-	const [category, setCategory] = useState('');
+	const [category, setCategory] = useState("");
 
 	const handleChange = (e) => {
 		setCategory(e.target.value);

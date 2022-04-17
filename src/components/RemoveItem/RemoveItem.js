@@ -1,7 +1,7 @@
-import React from 'react';
-import './styles.css';
-import { useDispatch } from 'react-redux';
-import { addCurrentItemName, removeItem } from '../DisplayItems/displayItemsSlice';
+import React from "react";
+import "./styles.css";
+import { useDispatch } from "react-redux";
+import { addCurrentItemName, removeItem } from "../DisplayItems/displayItemsSlice";
 
 export default function RemoveItem(itemName) {
 	const dispatch = useDispatch();

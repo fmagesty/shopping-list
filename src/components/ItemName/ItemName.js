@@ -1,6 +1,6 @@
-import React from 'react';
-import './styles.css';
-import { useSelector } from 'react-redux';
+import React from "react";
+import "./styles.css";
+import { useSelector } from "react-redux";
 
 export default function ItemName(itemName) {
 	itemName = itemName.itemName;
