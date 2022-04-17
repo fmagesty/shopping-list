@@ -1,34 +1,31 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
-import {
-  addPrice,
-  addCurrentItemName,
-} from "../DisplayItems/displayItemsSlice";
+import { addPrice, addCurrentItemName } from "../DisplayItems/displayItemsSlice";
 
-export default function ItemPrice(props) {
-  const dispatch = useDispatch();
-  const [price, setPrice] = useState(0);
-  const itemName = props.itemName;
-  const itemCounter = props.itemCounter;
+export default function ItemPrice(itemName) {
+	const dispatch = useDispatch();
+	const [price, setPrice] = useState(0);
+	const itemCounter = itemName.itemCounter;
+	itemName = itemName.itemName;
 
-  const handleChange = (e) => {
-    setPrice(e.target.value);
-  };
+	const handleChange = (e) => {
+		setPrice(e.target.value);
+	};
 
-  useEffect(() => {
-    dispatch(addCurrentItemName(itemName));
-    dispatch(addPrice(price));
-  }, [dispatch, itemName, price]);
+	useEffect(() => {
+		dispatch(addCurrentItemName(itemName));
+		dispatch(addPrice(price));
+	}, [dispatch, itemName, price]);
 
-  return (
-    <>
-      <input placeholder="Item price" type="number" onChange={handleChange} />
-      <span>
-        {(price * itemCounter).toLocaleString("en-us", {
-          style: "currency",
-          currency: "USD",
-        })}
-      </span>
-    </>
-  );
+	return (
+		<>
+			<input placeholder="Item price" type="number" onChange={handleChange} />
+			<span>
+				{(price * itemCounter).toLocaleString("en-us", {
+					style: "currency",
+					currency: "USD"
+				})}
+			</span>
+		</>
+	);
 }

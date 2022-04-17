@@ -8,8 +8,11 @@ todo/features:
 - Edit item name
 - Clear all items fea
 - Sort items by name/price/quantity/category
+- Make the item name input be the focused field when user enters the app
 
 todo/bugs:
+
+- Possible to enter empty string with X number of blank spaces as the item name
 
 todo/styles:
 
